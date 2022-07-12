@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "858379220756",
+    "project_id": "subtle-bus-295120",
+    "storage_bucket": "subtle-bus-295120.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858379220756:android:d72ae63f0f33bf73fef401",
+        "android_client_info": {
+          "package_name": "me.eatch.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858379220756-iblcpu8p23fia7n3145fmpgptlol5hm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqX6i8LO9ain-eQDlwRwlY0a2DrO3RdKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858379220756-iblcpu8p23fia7n3145fmpgptlol5hm2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

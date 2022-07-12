@@ -1,0 +1,63 @@
+node_modules
+# OSX
+#
+.DS_Store
+src/.DS_Store
+src/codebase/.DS_Store
+src/codebase/resources/.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+ios/Pods
+ios/Podfile.lock
+ios/PublicMulliner.xcworkspace
+ios/PublicMulliner.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+android/app/src/main/assets/index.android.bundle
+
+android/java_pid12160.hprof
+
+# node.js
+#
+node_modules/
+package-lock.json 
+npm-debug.log
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+
+# Bundle artifact
+*.jsbundle
+
+.vscode/
+
+__tests__/
+
+#env
+.env

@@ -1,0 +1,71 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Users/apple/Desktop/reactNativeSkeleton/node_modules/.bin:/Users/apple/Desktop/node_modules/.bin:/Users/apple/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/bin:/Users/apple/Desktop/node_modules/.bin:/Users/apple/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/apple/.npm/_npx/7930a8670f922cdb/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/apple/Library/Android/Sdk/emulator:/Users/apple/Library/Android/Sdk/tools:/Users/apple/Library/Android/Sdk/tools/bin:/Users/apple/Library/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOSPC: no space left on device, copyfile '/Users/apple/Library/Caches/Yarn/v6/npm-optionator-0.9.1-4f236a6373dae0566a6d43e1326674f50c291499-integrity/node_modules/optionator/lib/index.js' -> '/Users/apple/Desktop/reactNativeSkeleton/node_modules/optionator/lib/index.js'
+
+npm manifest: 
+  {
+    "name": "reactnativeskeleton",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "android": "react-native run-android",
+      "ios": "react-native run-ios",
+      "start": "react-native start",
+      "test": "jest",
+      "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    },
+    "dependencies": {
+      "react": "17.0.2",
+      "react-native": "0.67.2"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.9",
+      "@babel/runtime": "^7.12.5",
+      "@react-native-community/eslint-config": "^2.0.0",
+      "@types/jest": "^26.0.23",
+      "@types/react-native": "^0.66.15",
+      "@types/react-test-renderer": "^17.0.1",
+      "@typescript-eslint/eslint-plugin": "^5.7.0",
+      "@typescript-eslint/parser": "^5.7.0",
+      "babel-jest": "^26.6.3",
+      "eslint": "^7.14.0",
+      "jest": "^26.6.3",
+      "metro-react-native-babel-preset": "^0.66.2",
+      "react-test-renderer": "17.0.2",
+      "typescript": "^4.4.4"
+    },
+    "resolutions": {
+      "@types/react": "^17"
+    },
+    "jest": {
+      "preset": "react-native",
+      "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
