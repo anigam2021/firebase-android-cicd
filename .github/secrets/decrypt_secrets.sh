@@ -9,7 +9,7 @@ mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 cp ./.github/secrets/EatchCICD.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/EatchCICD.mobileprovision
 
 
-security create-keychain -p "" build.keychain
+security create-keychain -p "1234" build.keychain
 security import ./.github/secrets/apple.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
 
 security list-keychains -s ~/Library/Keychains/build.keychain
