@@ -33,7 +33,8 @@ jobs:
           exec .github/scripts/import-profile.sh
 
       - name: Build app
-        env: FASTLANE_DISABLE_OUTPUT_FORMAT=FALSE
+        env: 
+          FASTLANE_DISABLE_OUTPUT_FORMAT=FALSE
         run: |
           fastlane run build_app --verbose
 
