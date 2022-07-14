@@ -10,7 +10,7 @@ cp ./.github/secrets/EatchCICD.mobileprovision ~/Library/MobileDevice/Provisioni
 
 
 security create-keychain -p "" build.keychain
-security import ./.github/secrets/Certificates.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+security import ./.github/secrets/apple.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
 
 security list-keychains -s ~/Library/Keychains/build.keychain
 security default-keychain -s ~/Library/Keychains/build.keychain
