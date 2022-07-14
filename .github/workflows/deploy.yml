@@ -34,7 +34,7 @@ jobs:
 
       - name: Build app
         run: |
-          npm run build_app
+          fastlane run build_app
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
