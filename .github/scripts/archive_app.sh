@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-xcodebuild -workspace eatch.xcworkspace \
+xcodebuild -workspace ios/eatch.xcworkspace \
             -scheme eatch\ iOS \
             -sdk iphoneos \
             -configuration AppStoreDistribution \
