@@ -10,7 +10,7 @@ cp ./.github/secrets/EatchCICD.mobileprovision ~/Library/MobileDevice/Provisioni
 
 
 security create-keychain -p "1234" build.keychain
-security import ./.github/secrets/apple.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+security import ./.github/secrets/apple.p12 -t agg -k ~/Library/Keychains/build.keychain -P "1234" -A
 
 security list-keychains -s ~/Library/Keychains/build.keychain
 security default-keychain -s ~/Library/Keychains/build.keychain
