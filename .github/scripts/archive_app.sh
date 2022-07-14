@@ -2,9 +2,9 @@
 
 set -eo pipefail
 
-xcodebuild -workspace Calculator.xcworkspace \
-            -scheme Calculator\ iOS \
+xcodebuild -workspace eatch.xcworkspace \
+            -scheme eatch\ iOS \
             -sdk iphoneos \
             -configuration AppStoreDistribution \
-            -archivePath $PWD/build/Calculator.xcarchive \
+            -archivePath $PWD/build/eatch.xcarchive \
             clean archive | xcpretty
