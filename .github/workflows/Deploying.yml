@@ -25,6 +25,6 @@ jobs:
       - name: Publishing app
         if: success()
         env:
-          APPLEID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
-          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          APPLEID_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
+          APPLEID_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
         run: ./.github/scripts/publish_testflight.sh
