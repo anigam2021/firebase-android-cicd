@@ -3,7 +3,7 @@
 set -eo pipefail
 
 xcodebuild -workspace ios/eatch.xcworkspace \
-            -scheme Eatch \
+            -scheme eatch \ ios \
             -sdk iphoneos \
             -configuration AppStoreDistribution \
             -archivePath $PWD/build/eatch.xcarchive \
