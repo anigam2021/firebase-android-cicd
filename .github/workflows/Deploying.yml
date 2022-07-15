@@ -12,9 +12,9 @@ jobs:
         uses: actions/checkout@v1
       - name: Install gpg
         run: brew install gnupg
-#      - name: install pod
+      - name: install pod
 
- #       run: cd ios && npm i --force && pod install
+        run: cd ios && npm i --force && pod install
       - name: Setup provisioning profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
