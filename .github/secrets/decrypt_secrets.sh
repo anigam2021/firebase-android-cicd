@@ -2,7 +2,7 @@
 set -eo pipefail
 
 gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output ./.github/secrets/EatchCICD.mobileprovision ./.github/secrets/EatchCICD.mobileprovision.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output ./.github/secrets/ios_distribution.cer ./.github/secrets/ios_distribution.cer.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output ./.github/secrets/apple.p12 ./.github/secrets/apple.p12.gpg
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
