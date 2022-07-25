@@ -10,24 +10,37 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Install gpg
-        run: brew install gnupg
-      - name: install pod
+        
+      - name: Set up ruby env # setup ruby / gem
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.4
+          bundler-cache: true
 
-        run: cd ios && npm i --force && pod install
-      - name: Setup provisioning profile
-        env:
-          IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: ./.github/secrets/decrypt_secrets.sh
-      - name: Archiving project
-        env:
-          PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: ./.github/scripts/archive_app.sh
-      - name: Exporting .ipa
-        run: ./.github/scripts/export_ipa.sh
-      - name: Publishing app
-        if: success()
-        env:
-          APPLEID_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
-          APPLEID_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
-        run: ./.github/scripts/publish_testflight.sh
+      - name: npm setup
+        run: npm i --force
+
+      - name: Bundle install # use to setup fastlane dependency
+        run: cd ./ios && bundle install
+
+      - name: execute fastlane
+        run:  cd ./ios && bundle exec fastlane custom_lane
+
+      # - name: install pod
+      #   run: cd ios && npm i --force && pod install
+      # - name: Setup provisioning profile
+      #   #env:
+      #    # IOS_KEYS: ${{ secrets.IOS_KEYS }}
+      #   run: ./.github/secrets/decrypt_secrets.sh
+      # - name: Archiving project
+      #   env:
+      #     PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+      #   run: ./.github/scripts/archive_app.sh
+      # - name: Exporting .ipa
+      #   run: ./.github/scripts/export_ipa.sh
+      # - name: Publishing app
+      #   if: success()
+      #   env:
+      #     APPLEID_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
+      #     APPLEID_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
+      #   run: ./.github/scripts/publish_testflight.sh

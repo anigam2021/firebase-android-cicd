@@ -1,0 +1,74 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+
+    create_keychain(
+      name: "build",
+      password: "1234",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false
+    )
+
+    import_certificate(
+      certificate_path: "../.github/secrets/Each.p12",
+      certificate_password: "1234",
+      keychain_name: "build",
+      keychain_password: "1234"
+    )
+
+    install_provisioning_profile(
+      path: "../.github/secrets/eatchcicdalok.mobileprovision"
+    )
+
+    install_provisioning_profile(
+      path: "../.github/secrets/Each_Adhoc.mobileprovision"
+    )
+
+    cocoapods(
+      clean_install: true,
+      silent: true
+    )
+
+    increment_build_number(xcodeproj: "eatch.xcodeproj")
+
+    disable_automatic_code_signing(path: "eatch.xcodeproj", code_sign_identity: "Apple Development", profile_name: "eatch-ci-cd-alok", team_id: "R8GMD5F97U")
+
+    gym(
+      scheme: "eatch",
+      workspace: "eatch.xcworkspace",
+      clean: true,
+      sdk: "iphoneos",
+      archive_path: "../artifacts/eatch.xcarchive/",
+      build_path: "../artifacts/eatch.xcarchive/",
+      export_method: "ad-hoc",
+      include_bitcode: "false",
+      output_name: "each.ipa",
+      output_directory: "../artifacts/",
+      silent: true,
+      export_options: "ExportOptions.plist"
+    )
+
+    # upload_to_testflight(skip_waiting_for_build_processing: true)
+
+  end
+end
