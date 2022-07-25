@@ -16,9 +16,9 @@
 
 default_platform(:ios)
 
-# ENV["FASTLANE_USER"]="delivery@appventurez.com"
-# ENV["FASTLANE_PASSWORD"]="App@201014"
-# ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"]="xbqx-fhfw-wmfq-rozg"
+ ENV["FASTLANE_USER"]="delivery@appventurez.com"
+ ENV["FASTLANE_PASSWORD"]="App@201014"
+ ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"]="xbqx-fhfw-wmfq-rozg"
 # ENV["FASTLANE_SESSION"]=""
 
 platform :ios do
