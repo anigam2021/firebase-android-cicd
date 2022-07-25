@@ -15,6 +15,11 @@
 
 default_platform(:ios)
 
+# ENV["FASTLANE_USER"]="delivery@appventurez.com"
+# ENV["FASTLANE_PASSWORD"]="App@201014"
+# ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"]="xbqx-fhfw-wmfq-rozg"
+# ENV["FASTLANE_SESSION"]=""
+
 platform :ios do
   desc "Description of what the lane does"
   lane :custom_lane do
@@ -41,8 +46,12 @@ platform :ios do
     )
 
     install_provisioning_profile(
-      path: "../.github/secrets/Each_Adhoc.mobileprovision"
+      path: "../.github/secrets/eatchcicdalokappstore.mobileprovision"
     )
+
+    # install_provisioning_profile(
+    #   path: "../.github/secrets/Each_Adhoc.mobileprovision"
+    # )
 
     cocoapods(
       clean_install: true,
@@ -58,15 +67,17 @@ platform :ios do
       workspace: "eatch.xcworkspace",
       clean: true,
       sdk: "iphoneos",
-      archive_path: "../artifacts/eatch.xcarchive/",
-      build_path: "../artifacts/eatch.xcarchive/",
-      export_method: "ad-hoc",
-      include_bitcode: "false",
-      output_name: "each.ipa",
-      output_directory: "../artifacts/",
       silent: true,
-      export_options: "ExportOptions.plist"
+      export_options: "ExportOptions.plist",
     )
+
+    # deliver(
+    #   submit_for_review: false,
+    #   automatic_release: false,
+    #   skip_metadata: true,
+    #   skip_screenshots: true,
+    #   skip_binary_upload: true
+    # )
 
     upload_to_testflight(skip_waiting_for_build_processing: true)
 
