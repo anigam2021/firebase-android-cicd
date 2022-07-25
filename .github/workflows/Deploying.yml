@@ -23,7 +23,7 @@ jobs:
       - name: Bundle install # use to setup fastlane dependency
         run: cd ./ios && bundle install
 
-      - name: execute fastlane
+      - name: execute fastlane and upload on testflight 
         run:  cd ./ios && bundle exec fastlane custom_lane
 
       # - name: install pod
