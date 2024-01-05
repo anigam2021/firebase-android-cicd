@@ -33,7 +33,7 @@
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "@types/redux-saga": "^0.10.5",
-    "axios": "^0.26.0",
+    "axios": "^1.6.4",
     "email-validator": "^2.0.4",
     "i18next": "^21.6.14",
     "moment": "^2.29.3",
